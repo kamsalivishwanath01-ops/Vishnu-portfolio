@@ -1,0 +1,1155 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vishwanath Achari | Portfolio</title>
+
+    <meta name="description"
+          content="Vishwanath Achari's personal portfolio showcasing skills, projects, and interests in AI, machine learning, and web development.">
+
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --background: #080b14;
+            --card: #111827;
+            --gold: #f5c76b;
+            --white: #ffffff;
+            --gray: #b8c0d0;
+            --border: rgba(245, 199, 107, 0.2);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gold {
+            color: var(--gold);
+        }
+
+        .section {
+            padding: 100px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* ===== NAVIGATION ===== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 11, 20, 0.94);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        nav {
+            width: 84%;
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--gray);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--gold);
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .welcome {
+            color: var(--gold);
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            color: var(--gray);
+            font-weight: normal;
+        }
+
+        .hero p {
+            color: var(--gray);
+            margin: 22px 0 30px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: #111111;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #111111;
+        }
+
+        /* ===== PROFILE DESIGN ===== */
+
+        .profile-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-circle {
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle, #20283a, #0b0e18 75%);
+            box-shadow: 0 0 50px rgba(245, 199, 107, 0.12);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-initials {
+            font-size: 85px;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 5px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about {
+            background: #0c101c;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        /* ===== SKILLS ===== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 30px 20px;
+            text-align: center;
+            background: var(--card);
+            border: 1px solid #252d3d;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .projects {
+            background: #0c101c;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            border-radius: 10px;
+            background: var(--card);
+            border: 1px solid #252d3d;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .project-banner {
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+            background:
+                linear-gradient(135deg, #20283a, #111827);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .project-info p {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 3px;
+            font-size: 12px;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        /* ===== EDUCATION ===== */
+
+        .education-card {
+            max-width: 750px;
+            margin: auto;
+            padding: 30px;
+            background: var(--card);
+            border-left: 4px solid var(--gold);
+            border-radius: 6px;
+        }
+
+        .education-card h3 {
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 40px;
+        }
+
+        .contact-details h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .contact-details p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #252d3d;
+            color: var(--gray);
+            overflow-wrap: anywhere;
+        }
+
+        .contact-form {
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid #252d3d;
+            border-radius: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            background: #0b1020;
+            color: white;
+            border: 1px solid #343d50;
+            border-radius: 5px;
+            outline: none;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-message {
+            margin-top: 15px;
+            color: var(--gold);
+            overflow-wrap: anywhere;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #05070d;
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* ===== REVEAL ANIMATIONS ===== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        @media (max-width: 950px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile-area {
+                grid-row: 1;
+            }
+
+            .profile-circle {
+                width: 220px;
+                height: 220px;
+            }
+
+            .profile-initials {
+                font-size: 65px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container,
+            nav {
+                width: 90%;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: relative;
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 10px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                Vishwanath<span class="gold">.</span>
+            </a>
+
+            <button class="menu-btn"
+                    id="menu-btn"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                ☰
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== HOME ===== -->
+
+        <section class="hero section" id="home">
+            <div class="container hero-content">
+
+                <div class="hero-text reveal">
+                    <div class="welcome">WELCOME TO MY PORTFOLIO</div>
+
+                    <h1>
+                        Hi, I'm<br>
+                        <span class="gold">Vishwanath Achari</span>
+                    </h1>
+
+                    <h2>Aspiring AI &amp; Machine Learning Engineer</h2>
+
+                    <p>
+                        I am passionate about technology, artificial
+                        intelligence, programming, and web development.
+                        I enjoy learning new skills and building creative
+                        projects that solve real-world problems.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="#projects" class="btn">Explore Projects</a>
+                        <a href="#contact" class="btn btn-outline">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-area reveal">
+                    <div class="profile-circle"
+                         role="img"
+                         aria-label="VA initials representing Vishwanath Achari">
+                        <span class="profile-initials">VA</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+
+        <section class="section about" id="about">
+            <div class="container reveal">
+
+                <h2 class="section-title">
+                    About <span class="gold">Me</span>
+                </h2>
+
+                <p class="section-subtitle">
+                    Get to know me and my interests.
+                </p>
+
+                <div class="about-content">
+                    <p>
+                        Hello! My name is Vishwanath Achari. I am an
+                        aspiring technology professional interested in
+                        Artificial Intelligence, Machine Learning, and
+                        Web Development.
+                    </p>
+
+                    <p>
+                        I enjoy developing websites, learning programming
+                        languages, exploring AI technologies, and solving
+                        technical problems. I believe that continuous
+                        learning and practical experience are important
+                        for professional growth.
+                    </p>
+
+                    <p>
+                        My goal is to improve my technical knowledge and
+                        create useful, innovative digital solutions.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+
+        <section class="section" id="skills">
+            <div class="container">
+
+                <h2 class="section-title reveal">
+                    My <span class="gold">Skills</span>
+                </h2>
+
+                <p class="section-subtitle reveal">
+                    Technologies and areas I am learning.
+                </p>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🌐</div>
+                        <h3>HTML</h3>
+                        <p>Creating structured web pages.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🎨</div>
+                        <h3>CSS</h3>
+                        <p>Designing responsive and attractive websites.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">⚡</div>
+                        <h3>JavaScript</h3>
+                        <p>Adding interactivity to websites.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python</h3>
+                        <p>Programming and problem-solving.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🤖</div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Learning AI concepts and applications.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🧠</div>
+                        <h3>Machine Learning</h3>
+                        <p>Exploring data-driven models and techniques.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>MySQL</h3>
+                        <p>Learning relational databases and SQL.</p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">💻</div>
+                        <h3>C / C++</h3>
+                        <p>Practising programming fundamentals.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+
+        <section class="section projects" id="projects">
+            <div class="container">
+
+                <h2 class="section-title reveal">
+                    My <span class="gold">Projects</span>
+                </h2>
+
+                <p class="section-subtitle reveal">
+                    Some project ideas and development areas.
+                </p>
+
+                <div class="projects-grid">
+
+                    <article class="project-card reveal">
+                        <div class="project-banner">🌐</div>
+
+                        <div class="project-info">
+                            <h3>Personal Portfolio</h3>
+
+                            <p>
+                                A responsive personal website to introduce
+                                myself and showcase my skills, interests,
+                                and projects.
+                            </p>
+
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-banner">🎓</div>
+
+                        <div class="project-info">
+                            <h3>Student Management System</h3>
+
+                            <p>
+                                A website concept for organizing student
+                                information and presenting academic records.
+                            </p>
+
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-banner">🤖</div>
+
+                        <div class="project-info">
+                            <h3>AI Object Detection</h3>
+
+                            <p>
+                                A computer vision project concept for
+                                identifying objects in images or video
+                                using Python-based tools.
+                            </p>
+
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">OpenCV</span>
+                            <span class="project-tag">YOLO</span>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+
+        <section class="section" id="education">
+            <div class="container">
+
+                <h2 class="section-title reveal">
+                    My <span class="gold">Education</span>
+                </h2>
+
+                <p class="section-subtitle reveal">
+                    My academic background.
+                </p>
+
+                <div class="education-card reveal">
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+
+                    <p>
+                        <strong>Field:</strong>
+                        Computer Science and Engineering
+                    </p>
+
+                    <p>
+                        <strong>Interest:</strong>
+                        Artificial Intelligence and Machine Learning
+                    </p>
+
+                    <p>
+                        I am interested in strengthening my programming
+                        skills, understanding computer science concepts,
+                        and developing practical projects.
+                    </p>
+
+                    <!-- Add your college name and graduation year here. -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+
+        <section class="section about" id="contact">
+            <div class="container">
+
+                <h2 class="section-title reveal">
+                    Contact <span class="gold">Me</span>
+                </h2>
+
+                <p class="section-subtitle reveal">
+                    Have a question or project idea? Get in touch.
+                </p>
+
+                <div class="contact-wrapper">
+
+                    <div class="contact-details reveal">
+                        <h3>Let's Connect!</h3>
+
+                        <p>
+                            I am interested in connecting with people
+                            who share an interest in technology,
+                            programming, and innovative projects.
+                        </p>
+
+                        <div class="contact-item">
+                            👤 Vishwanath Achari
+                        </div>
+
+                        <div class="contact-item">
+                            💼 AI &amp; ML / Web Development
+                        </div>
+
+                        <div class="contact-item">
+                            📍 India
+                        </div>
+
+                        <!-- Add your email and professional profile links
+                             when you are ready to share them. -->
+                    </div>
+
+                    <form class="contact-form reveal" id="contact-form">
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your Name"
+                            autocomplete="name"
+                            maxlength="100"
+                            required
+                        >
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your Email"
+                            autocomplete="email"
+                            maxlength="254"
+                            required
+                        >
+
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Subject"
+                            maxlength="150"
+                            required
+                        >
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message..."
+                            maxlength="3000"
+                            required
+                        ></textarea>
+
+                        <button type="submit" class="btn">
+                            Prepare Email
+                        </button>
+
+                        <p class="form-message"
+                           id="form-message"
+                           role="status"
+                           aria-live="polite"></p>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="year"></span>
+                <span class="gold">Vishwanath Achari</span>.
+                All rights reserved.
+            </p>
+
+            <p>Designed with HTML, CSS &amp; JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+
+    <script>
+        // Automatically update the copyright year.
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Mobile navigation menu.
+        const menuButton = document.getElementById("menu-btn");
+        const navLinks = document.getElementById("nav-links");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Close the mobile menu after clicking a navigation link.
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.textContent = "☰";
+            });
+        });
+
+
+        // Reveal sections when they enter the viewport.
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(
+                function (entries, currentObserver) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            currentObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+            revealElements.forEach(function (element) {
+                observer.observe(element);
+            });
+        } else {
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+        }
+
+
+        // Highlight the active navigation link.
+        const pageSections = document.querySelectorAll("main section[id]");
+        const navigationLinks = document.querySelectorAll(".nav-links a");
+
+        if ("IntersectionObserver" in window) {
+            const sectionObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            navigationLinks.forEach(function (link) {
+                                const isActive =
+                                    link.getAttribute("href") ===
+                                    "#" + entry.target.id;
+
+                                link.classList.toggle("active", isActive);
+                            });
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-25% 0px -60% 0px"
+                }
+            );
+
+            pageSections.forEach(function (section) {
+                sectionObserver.observe(section);
+            });
+        }
+
+
+        // Contact form: prepare an email in the visitor's email application.
+        // Replace the example email address below with your real email.
+        const contactForm = document.getElementById("contact-form");
+        const formMessage = document.getElementById("form-message");
+
+        const portfolioEmail = "";
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !email || !subject || !message) {
+                formMessage.textContent =
+                    "Please complete all fields before continuing.";
+                return;
+            }
+
+            if (!portfolioEmail) {
+                formMessage.textContent =
+                    "The form is ready. Add your email address in the JavaScript code to enable email preparation.";
+                return;
+            }
+
+            const emailSubject = encodeURIComponent(subject);
+            const emailBody = encodeURIComponent(
+                "Name: " + name +
+                "\nEmail: " + email +
+                "\n\nMessage:\n" + message
+            );
+
+            const mailtoURL =
+                "mailto:" + portfolioEmail +
+                "?subject=" + emailSubject +
+                "&body=" + emailBody;
+
+            formMessage.textContent =
+                "Opening your email application. Please review and send the message.";
+
+            window.location.href = mailtoURL;
+        });
+    </script>
+
+</body>
+</html>
+```
+
+---
+
+## How to Run Your Portfolio
+
+**Step 1:** Open VS Code.
+
+**Step 2:** Create a folder called `VishwanathPortfolio`.
+
+**Step 3:** Create a file named `index.html`.
+
+**Step 4:** Copy the complete code above and paste it into that file.
+
+**Step 5:** Save the file using `Ctrl + S`.
+
+**Step 6:** Right-click `index.html` and select **Open with Live Server**, if you have the Live Server extension installed.
+
+Your portfolio will open in your browser.
+
+### Features included
+
+* Premium black-and-gold theme.
+* Owner name: **Vishwanath Achari**.
+* Responsive design for computers and mobile phones.
+* Animated profile initials.
+* About Me section.
+* Skills and projects sections.
+* Education section.
+* Contact form.
+* Mobile navigation menu.
+* Smooth scrolling and reveal animations.
+
+**Important:** The skills and projects are editable sample content. Update them to reflect your actual experience. The contact form needs your real email address to prepare an email, and visitors must still send it from their email application.
